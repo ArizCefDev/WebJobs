@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DataAccess.Entity.Job>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<!--/search_form -->
+<div id="search_form" class="search_top">
+    <h2>Start your job search</h2>
+</div>
+<!--//search_form -->
+<div class="banner-bottom">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">All Jobs Posting </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="col-md-8 job_info_left">
+                <div class="but_list">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" id="home-tab" role="tab"
+                                   data-toggle="tab" aria-controls="home" aria-expanded="true">Top Jobs</a>
+                            </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="home"
+                                 aria-labelledby="home-tab">
+                                <!--Posts-->
+                                @foreach (var item in Model)
+                                {
+                                    <div class="tab_grid">
+                                        <div class="col-sm-9">
+                                            <div class="jobs_right">
+                                                <div class="date">web <span>Jobs</span></div>
+                                                <div class="date_desc">
+                                                    <h6 class="title">
+                                                        <a href="/Default/JobDetails/@item.ID/">@item.Title</a>
+                                                    </h6>
+                                                    <span class="meta">@item.Company</span>
+                                                </div>
+
+                                                <p class="description">
+                                                    @item.Responsibility.Substring(0,item.Responsibility.Substring(0,150).LastIndexOf(" "))...
+                                                </p>
+                                                <p class="description">
+                                                    Date : @(((DateTime)item.Date).ToString("dd-MMM-yyyy"))
+                                                    / Salary : @item.Salary $
+                                                </p>
+                                                <div class="read">
+                                                    <a href="/Default/JobDetails/@item.ID/" class="read-more">Read More</a>
+                                                </div>
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("CategoryList")
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+

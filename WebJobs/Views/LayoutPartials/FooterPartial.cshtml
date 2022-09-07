@@ -1,0 +1,63 @@
+﻿<!-- footer -->
+<div class="footer_top_agileits">
+    <div class="container">
+        @await Component.InvokeAsync("AboutList")
+
+        <div class="col-md-4 footer_grid">
+            <h3>Latest News</h3>
+            <ul class="footer_grid_list">
+                <li>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="/Default/Index/">Home Page </a>
+                </li>
+                <li>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="/Jobs/Index/">Jobs Page</a>
+                </li>
+                <li>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="/NewVacancy/NewVacancyAdd/">New Vacancy Page </a>
+                </li>
+                <li>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="/About/Index/">About Page</a>
+                </li>
+                <li>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <a href="/Contact/Index/">Contact Page </a>
+                </li>
+            </ul>
+        </div>
+        @await Component.InvokeAsync("FooterContactList")
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="footer_w3ls">
+    <div class="container">
+        <div class="footer_bottom">
+            <div class="col-md-9 footer_bottom_grid">
+                <div class="footer_bottom1">
+                    <a href="index.html">
+                        <h2>
+                            <span class="fa fa-signal" aria-hidden="true"></span> WEBJOBS.COM<label>JOBS POSTING</label>
+                        </h2>
+                    </a>
+                    <p>© @DateTime.Now.Year. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 footer_bottom_grid">
+                <h6>Follow Us</h6>
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+<!-- //footer -->

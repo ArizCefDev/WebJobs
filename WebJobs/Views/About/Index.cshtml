@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DataAccess.Entity.About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<!--/search_form -->
+<div id="search_form" class="search_top">
+    <h2>Start your job search</h2>
+</div>
+<!--//search_form -->
+<div class="banner-bottom">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">About Us</h3>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="inner_sec_grids_info_w3ls">
+                <div class="col-md-6 banner_bottom_left">
+                    <h4>@item.Title</h4>
+                    <p>
+                        @item.Description
+                    </p>
+                    <p>
+                        @item.Description2
+                    </p>
+                    <ul class="some_agile_facts">
+                        <li><span class="fa fa-briefcase" aria-hidden="true"></span><label>@ViewBag.jobs</label> Total Jobs Postings</li>
+                        <li><span class="fa fa-graduation-cap" aria-hidden="true"></span><label>@ViewBag.category</label> Total Categories</li>
+                        <li><span class="fa fa-user" aria-hidden="true"></span><label>88</label> Strategic Partners</li>
+                        <li><span class="fa fa-line-chart" aria-hidden="true"></span><label>436</label> Companies We Helped</li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-6 banner_bottom_right">
+                    <div class="agileits_w3layouts_banner_bottom_grid">
+                        <img src="@item.Image" alt=" " class="img-responsive" />
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        }
+
+    </div>
+</div>
+<!-- //banner-bottom -->

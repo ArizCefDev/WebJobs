@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DataAccess.Entity.Contact>
+
+@foreach (var item in Model)
+{
+    <div class="mail-agileits-w3layouts">
+        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+        <div class="contact-right">
+            <p>Telephone </p><span>@item.Telephone</span>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="mail-agileits-w3layouts">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        <div class="contact-right">
+            <p>Mail </p><a href="mailto:@item.Email">@item.Email</a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="mail-agileits-w3layouts">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <div class="contact-right">
+            <p>Location</p><span>@item.Address</span>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="agileits_w3layouts_nav_right contact">
+        <div class="social two">
+            <ul>
+                <li><a href="@item.FacebookURL"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="@item.InstagramURL"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="@item.GithubURL"><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+    </div>
+}

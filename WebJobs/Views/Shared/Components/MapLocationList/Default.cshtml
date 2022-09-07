@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DataAccess.Entity.Contact>
+
+<!-- /map -->
+<div class="map">
+    @foreach (var item in Model)
+    {
+        <iframe src="@item.TwitterURL"
+            style="border:0"></iframe>
+    }
+</div>
+<!-- //map -->

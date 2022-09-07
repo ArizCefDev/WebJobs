@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DataAccess.Entity.Category>
+
+<select id="country12" class="frm-field required">
+    @foreach (var item in Model)
+    {
+            <option><a href="/Default/Index/">@item.Name</a></option>
+    }
+
+</select>

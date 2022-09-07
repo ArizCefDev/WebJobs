@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DataAccess.Entity.Job>
+@{
+    ViewData["Title"] = "JobDetails";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<!-- /inner_content -->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">Some More Info </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="col-md-8 job_info_left">
+                @foreach (var item in Model)
+                {
+                    <div class="single-left1">
+                        <img src="~/WebJobs/images/banner3.jpg" alt=" " class="img-responsive" />
+                        <h3>@item.Title</h3>
+                        <ul>
+                            <li><span class="fa fa-building-o" aria-hidden="true"></span><a href="#">Company: @item.Company</a></li>
+                            <li><span class="fa fa-clock-o" aria-hidden="true"></span><a href="#">Date: @(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</a></li>
+                            <li><span class="fa fa-times" aria-hidden="true"></span><a href="#">Last Date: @(((DateTime)item.LastDate).ToString("dd-MMM-yyyy"))</a></li>
+                            <li><span class="fa fa-money" aria-hidden="true"></span><a href="#">Salary: @item.Salary</a></li>
+                            <li><span class="fa fa-envelope-o" aria-hidden="true"></span><a href="#">Mail: @item.Mail</a></li>
+                        </ul>
+                        <br>
+                        <h4>Responsibilities:</h4>
+                        <p>
+                            @item.Responsibility
+                        </p>
+                        <h4> Vacancy requirements:</h4>
+                        <p>
+                            @item.VacancyRequirement
+                        </p>
+
+                        <h4>Additional Information</h4>
+                        <p>
+                            @item.AddInformation
+                        </p>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4 job_info_right">
+                <div class="col_3 permit">
+                    <h3>Jobs by Category</h3>
+                    <ul class="list_2">
+                        <li><a href="#">Railway Recruitment</a></li>
+                        <li><a href="#">Air Force Jobs</a></li>
+                        <li><a href="#">Police Jobs</a></li>
+                        <li><a href="#">Intelligence Bureau Jobs</a></li>
+                        <li><a href="#">Army Jobs</a></li>
+                        <li><a href="#">Navy Jobs</a></li>
+                        <li><a href="#">BSNL Jobs</a></li>
+                        <li><a href="#">Software Jobs</a></li>
+                        <li><a href="#">Research Jobs</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- //inner_content -->

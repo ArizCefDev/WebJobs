@@ -1,0 +1,52 @@
+﻿@model DataAccess.Entity.Message
+@{
+    ViewData["Title"] = "MessageAdd";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<!--/search_form -->
+<div id="search_form" class="search_top">
+    <h2>Start your job search</h2>
+</div>
+<!--//search_form -->
+<!-- /inner_content -->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle">Contact Us</h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="col-md-4 agile_info_mail_img_info">
+                <div class="address-grid">
+                    <h4>Contact <span>Info</span></h4>
+                    @await Component.InvokeAsync("ContactList")
+                </div>
+            </div>
+            <div class="col-md-8 agile_info_mail_img">
+            </div>
+            <div class="clearfix"> </div>
+                <div class="w3layouts_mail_grid">
+
+                    <form method="post">
+                        <div class="col-md-6 wthree_contact_left_grid">
+                            <input type="text" asp-for="Name" placeholder="Name" required="">
+                            <input type="email" asp-for="Email" placeholder="Email" required="">
+                            <input type="text" asp-for="Telephone" placeholder="Telephone" required="">
+                            <input type="text" asp-for="Subject" placeholder="Subject" required="">
+                        </div>
+                        <div class="col-md-6 wthree_contact_left_grid">
+                            <textarea asp-for="Messages" placeholder="Message..." required=""></textarea>
+                            <input type="submit" value="Submit">
+                        </div>
+                        <div class="clearfix"> </div>
+
+                    </form>
+
+                </div>
+        </div>
+
+    </div>
+</div>
+<!-- //mid-services -->
+@await Component.InvokeAsync("MapLocationList")
+

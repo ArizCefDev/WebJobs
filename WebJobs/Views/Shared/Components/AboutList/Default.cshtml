@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DataAccess.Entity.About>
+
+<div class="col-md-4 footer_grid">
+    <h3>About Us</h3>
+    @foreach (var item in Model)
+    {
+        <p>
+            @item.Description
+        </p>
+    }
+</div>

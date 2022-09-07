@@ -1,0 +1,61 @@
+﻿@model DataAccess.Entity.Job
+@{
+    ViewData["Title"] = "NewVacancyAdd";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<!-- banner -->
+<div id="search_form" class="search_top">
+    <h2>Add a new vacancy</h2>
+</div>
+<!--//banner -->
+<!-- /inner_content -->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle three">Your new vacancy </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="signin-form">
+                <div class="login-form-rec">
+                    <form method="post">
+
+                        <h4>Vacancy Title</h4>
+                        <input type="text" asp-for="Title" placeholder="Add vacancy title" required="">
+                        <br>
+                        <h4>Category</h4>
+                         @Html.DropDownListFor(x=>x.CategoryID,(IEnumerable<SelectListItem>)ViewBag.c, new {@class="form-control"})                        <br>
+                        <h4>Company name</h4>
+                        <input type="text" asp-for="Company" placeholder="Add company name" required="">
+                        <br>
+                        <h4>Date</h4>
+                        <input type="date" asp-for="Date" placeholder="Add date" required="" class="form-control">
+                        <br>
+                        <h4>Last Date</h4>
+                        <input type="date" asp-for="LastDate" placeholder="Add last date" required="" class="form-control">
+                        <br>
+                        <h4>Salary</h4>
+                        <input type="text" asp-for="Salary" placeholder="Add salary" required="">
+                        <br>
+                        <h4>Email address</h4>
+                        <input type="email" asp-for="Mail" placeholder="Add email address" required="">
+                        <br>
+                        <h4>Responsibilities</h4>
+                        <textarea  asp-for="Responsibility" cols="30" rows="10"></textarea>
+                        <br>
+                        <h4>Vacancy Requirements</h4>
+                        <textarea  asp-for="VacancyRequirement" cols="30" rows="10"></textarea>
+                        <br>
+                        <h4>Add Information</h4>
+                        <textarea  asp-for="AddInformation" cols="30" rows="10"></textarea>
+                        <br>
+                        <div class="tp">
+                            <input type="submit" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -262,7 +262,7 @@ body a:hover{
 			-webkit-transition: width .05s linear;
 			transition: width .05s linear;
 			-webkit-transform: translateZ(0) scale(1,1);
-			background: #00bcd4;
+			background: #018127;
 			z-index: 11;
 		}
 		nav.main-menu>ul{margin:7px 0}
@@ -278,17 +278,17 @@ body a:hover{
 			-webkit-transition: all .1s linear;
 			transition: all .1s linear;
 		}
-		nav.main-menu li ul{
-		    position: absolute;
-			display: inline-block;
-			background: #00bcd4;
-			top: 0;
-			right: -210px;
-			width: 0;
-			overflow: hidden;
-			-webkit-transition: width 0s .05s linear;
-			transition: width 0s .05s linear;
-		}
+			nav.main-menu li ul {
+				position: absolute;
+				display: inline-block;
+				background: #018127;
+				top: 0;
+				right: -210px;
+				width: 0;
+				overflow: hidden;
+				-webkit-transition: width 0s .05s linear;
+				transition: width 0s .05s linear;
+			}
 		nav.main-menu li li{
 			display:table;
 			border-collapse:collapse;
@@ -303,8 +303,9 @@ body a:hover{
 		nav.main-menu li li .subnav-text{
 			display:table-cell;vertical-align:middle;padding-left:20px;padding-right:40px
 		}
-		.no-touch nav.main-menu li li:hover a{
-			color:#fff;background-color:#00acc1;
+		.no-touch nav.main-menu li li:hover a {
+			color: #fff;
+			background-color: #018127;
 		}
 		.no-touch nav.main-menu li:hover>a,nav.main-menu li.active>a{color:#fff;background-color:#00acc1;}
 		.no-touch nav.main-menu li:hover ul,nav.main-menu li.active ul{width:210px}
@@ -1238,11 +1239,11 @@ svg#lol {
 }
 /*-- //footer --*/
 /*-- buttons --*/
-.buttons-heading h2,.grids-heading h2,.chart-heading h2,.table-heading h2,.map-heading h2{
-	color: #00bcd4;
-    font-size: 2.5em;
-    margin: 0 0 1em 0;
-    text-align: center;
+.buttons-heading h2, .grids-heading h2, .chart-heading h2, .table-heading h2, .map-heading h2 {
+	color: #018127;
+	font-size: 2.5em;
+	margin: 0 0 1em 0;
+	text-align: center;
 }
 /*-- color-variations --*/
 .variations-panel{

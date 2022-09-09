@@ -12,6 +12,9 @@ body {
 	background: #fff;
 	font-family: 'Work Sans', sans-serif;
 }
+.texterror{
+	color:red;
+}
 
 body a {
 	text-decoration: none;

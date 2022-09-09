@@ -41,25 +41,10 @@
                     </div>
                 }
             </div>
-            <div class="col-md-4 job_info_right">
-                <div class="col_3 permit">
-                    <h3>Jobs by Category</h3>
-                    <ul class="list_2">
-                        <li><a href="#">Railway Recruitment</a></li>
-                        <li><a href="#">Air Force Jobs</a></li>
-                        <li><a href="#">Police Jobs</a></li>
-                        <li><a href="#">Intelligence Bureau Jobs</a></li>
-                        <li><a href="#">Army Jobs</a></li>
-                        <li><a href="#">Navy Jobs</a></li>
-                        <li><a href="#">BSNL Jobs</a></li>
-                        <li><a href="#">Software Jobs</a></li>
-                        <li><a href="#">Research Jobs</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="clearfix"></div>
+            @await Component.InvokeAsync("CategoryList")
         </div>
+        <div class="clearfix"></div>
     </div>
+</div>
 </div>
 <!-- //inner_content -->

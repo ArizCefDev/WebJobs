@@ -12,5 +12,6 @@ namespace Business.Abstract
         IEnumerable<Job> GetJobID(int id);
         IEnumerable<Job> GetJobFilter(int id);
         IEnumerable<Job> GetJobSearch(string s);
+        IEnumerable<Job> GetJobWithCategory();
     }
 }

@@ -35,9 +35,9 @@
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td>@(((DateTime)item.LastDate).ToString("dd-MMM-yyyy"))</td>
                                 <td>@item.Salary</td>
-                                <td>@item.CategoryID</td>
-                                <td><a href="#" class="btn btn-success">Update</a></td>
-                                <td><a href="#" style="background:#EB3E28;" class="btn btn-success">Delete</a></td>
+                                <td>@item.Category.Name</td>
+                                <td><a href="/Admin/Job/JobUpdate/@item.ID/" class="btn btn-success">Update</a></td>
+                                <td><a href="/Admin/Job/JobDelete/@item.ID/" style="background:#EB3E28;" class="btn btn-success">Delete</a></td>
                             </tr>
                         }
                     </tbody>

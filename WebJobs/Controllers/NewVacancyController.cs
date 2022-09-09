@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules;
 using DataAccess.Entity;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
@@ -46,9 +48,23 @@ namespace WebJobs.Controllers
                                                         Value = x.ID.ToString()
                                                     }).ToList();
             ViewBag.c = valueGet;
-            p.Status = true;
-            _jobsService.Insert(p);
-            return RedirectToAction("VacancyMessage", "NewVacancy");
+
+            JobsValidator jbv = new JobsValidator();
+            ValidationResult results = jbv.Validate(p);
+            if (results.IsValid)
+            {
+                p.Status = true;
+                _jobsService.Insert(p);
+                return RedirectToAction("VacancyMessage", "NewVacancy");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View(p);
         }
     }
 }

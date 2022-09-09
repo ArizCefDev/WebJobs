@@ -21,26 +21,33 @@
                     <form method="post">
 
                         <h4>Vacancy Title</h4>
-                        <input type="text" asp-for="Title" placeholder="Add vacancy title" required="">
+                        @Html.ValidationMessageFor(x=>x.Title,"",new {@class="texterror"})
+                        <input type="text" asp-for="Title" placeholder="Add vacancy title">
                         <br>
                         <h4>Category</h4>
                          @Html.DropDownListFor(x=>x.CategoryID,(IEnumerable<SelectListItem>)ViewBag.c, new {@class="form-control"})                        <br>
                         <h4>Company name</h4>
-                        <input type="text" asp-for="Company" placeholder="Add company name" required="">
+                        @Html.ValidationMessageFor(x=>x.Company,"",new {@class="texterror"})
+                        <input type="text" asp-for="Company" placeholder="Add company name">
+                        <br>
+                        <h4>Address</h4>
+                        @Html.ValidationMessageFor(x=>x.Address,"",new {@class="texterror"})
+                        <input type="text" asp-for="Address" placeholder="Add location address">
                         <br>
                         <h4>Date</h4>
-                        <input type="date" asp-for="Date" placeholder="Add date" required="" class="form-control">
+                        <input type="date" asp-for="Date" placeholder="Add date" class="form-control">
                         <br>
                         <h4>Last Date</h4>
-                        <input type="date" asp-for="LastDate" placeholder="Add last date" required="" class="form-control">
+                        <input type="date" asp-for="LastDate" placeholder="Add last date" class="form-control">
                         <br>
                         <h4>Salary</h4>
-                        <input type="text" asp-for="Salary" placeholder="Add salary" required="">
+                        <input type="text" asp-for="Salary" placeholder="Add salary">
                         <br>
                         <h4>Email address</h4>
-                        <input type="email" asp-for="Mail" placeholder="Add email address" required="">
+                        <input type="email" asp-for="Mail" placeholder="Add email address">
                         <br>
                         <h4>Responsibilities</h4>
+                        @Html.ValidationMessageFor(x=>x.Responsibility,"",new {@class="texterror"})
                         <textarea  asp-for="Responsibility" cols="30" rows="10"></textarea>
                         <br>
                         <h4>Vacancy Requirements</h4>

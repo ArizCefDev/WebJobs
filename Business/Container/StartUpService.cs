@@ -15,19 +15,19 @@ namespace Business.Container
     {
         public static void ContainerDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IJobsService, JobsService>();
+            services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IBannerService, BannerService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IJobsService, JobsService>();
             services.AddScoped<IMessageService, MessageService>();
 
             //EF
-            services.AddScoped<IJobsDal, EfJobs>();
+            services.AddScoped<IAboutDal, EfAbout>();
             services.AddScoped<IBannerDal, EfBanner>();
             services.AddScoped<ICategoryDal, EfCategory>();
-            services.AddScoped<IAboutDal, EfAbout>();
             services.AddScoped<IContactDal, EfContact>();
+            services.AddScoped<IJobsDal, EfJobs>();
             services.AddScoped<IMessageDal, EfMessage>();
         }
     }

@@ -44,6 +44,11 @@ namespace Business.Concrete
             return _jobsDal.GetListFilter(x=>x.Title.Contains(s));
         }
 
+        public IEnumerable<Job> GetJobWithCategory()
+        {
+            return _jobsDal.GetListWithCategory();
+        }
+
         public IEnumerable<Job> GetList()
         {
             return _jobsDal.GetAll();

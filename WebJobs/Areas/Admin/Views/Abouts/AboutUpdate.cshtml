@@ -1,0 +1,42 @@
+﻿@model DataAccess.Entity.About
+@{
+    ViewData["Title"] = "AboutUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-grid">
+    <div class="agile-grids">
+        <!-- input-forms -->
+        <div class="grids">
+            <div class="progressbar-heading grids-heading">
+                <h2>About Update</h2>
+            </div>
+            <div class="panel panel-widget forms-panel">
+                <div class="forms">
+                    <div class="form-grids widget-shadow" data-example-id="basic-forms">
+                        <div class="form-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Title</label>
+                                    <input type="text" asp-for="Title" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Description 1</label>
+                                    <textarea asp-for="Description" cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Description 2</label>
+                                    <textarea asp-for="Description2" cols="30" rows="10"></textarea>
+
+                                </div>
+                                <button type="submit" class="btn btn-default w3ls-button">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //input-forms -->
+    </div>
+</div>
+

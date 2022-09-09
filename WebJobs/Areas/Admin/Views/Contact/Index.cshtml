@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DataAccess.Entity.Message>
+﻿@model IEnumerable<DataAccess.Entity.Contact>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -9,31 +9,27 @@
         <!-- tables -->
 
         <div class="table-heading">
-            <h2>Incoming messages table</h2>
+            <h2>Site contact table</h2>
         </div>
         <div class="agile-tables">
             <div class="w3l-table-info">
                 <table id="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
                             <th>Telephone</th>
-                            <th>Subject</th>
-                            <th>Details</th>
-                            <th>Delete</th>
+                            <th>E-Mail</th>
+                            <th>Address</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Name</td>
-                                <td>@item.Email</td>
                                 <td>@item.Telephone</td>
-                                <td>@item.Subject</td>
-                                <td><a href="/Admin/Message/MessageDetails/@item.ID/" class="btn btn-primary">Details</a></td>
-                                <td><a href="/Admin/Message/MessageDelete/@item.ID/" style="background:#EB3E28;" class="btn btn-success">Delete</a></td>
+                                <td>@item.Email</td>
+                                <td>@item.Address</td>
+                                <td><a href="/Admin/Contact/ContactUpdate/@item.ID/" class="btn btn-success">Update</a></td>
                             </tr>
                         }
                     </tbody>
@@ -43,3 +39,4 @@
         <!-- //tables -->
     </div>
 </div>
+

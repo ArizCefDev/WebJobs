@@ -1,0 +1,74 @@
+﻿@model DataAccess.Entity.Job
+@{
+    ViewData["Title"] = "JobUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-grid">
+    <div class="agile-grids">
+        <!-- input-forms -->
+        <div class="grids">
+            <div class="progressbar-heading grids-heading">
+                <h2>Jobs Update</h2>
+            </div>
+            <div class="panel panel-widget forms-panel">
+                <div class="forms">
+                    <div class="form-grids widget-shadow" data-example-id="basic-forms">
+                        <div class="form-body">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Title</label>
+                                    <input type="text" asp-for="Title" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Category</label>
+                                    @Html.DropDownListFor(x=>x.CategoryID,(IEnumerable<SelectListItem>) ViewBag.c,new {@class="form-control"})
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Company</label>
+                                    <input type="text" asp-for="Company" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Address</label>
+                                    <input type="text" asp-for="Address" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Date</label>
+                                    <input type="date" asp-for="Date" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Last Date</label>
+                                    <input type="date" asp-for="LastDate" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Salary</label>
+                                    <input type="text" asp-for="Salary" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">E-mail</label>
+                                    <input type="email" asp-for="Mail" class="form-control" id="exampleInputEmail1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Responsibility</label>
+                                    <textarea asp-for="Responsibility" cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Vacancy Requirement</label>
+                                    <textarea asp-for="VacancyRequirement" cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Add Information</label>
+                                    <textarea asp-for="AddInformation" cols="30" rows="10"></textarea>
+
+                                </div>
+                                <button type="submit" class="btn btn-default w3ls-button">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //input-forms -->
+    </div>
+</div>
+

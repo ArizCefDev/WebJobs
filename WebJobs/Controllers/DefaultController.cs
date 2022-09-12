@@ -1,11 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using DataAccess.EF;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace WebJobs.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IJobsService _jobsService;

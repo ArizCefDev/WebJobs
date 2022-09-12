@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using DataAccess.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebJobs.Controllers
 {
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         private readonly IMessageService _messageService;

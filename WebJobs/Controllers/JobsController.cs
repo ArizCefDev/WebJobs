@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace WebJobs.Controllers
 {
+    [AllowAnonymous]
     public class JobsController : Controller
     {
         private readonly IJobsService _jobsService;

@@ -1,0 +1,46 @@
+﻿@model WebJobs.Models.UserRegisterViewModel
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<div class="services-breadcrumb_w3layouts">
+    <div class="inner_breadcrumb">
+        <ul class="short_w3ls" _w3ls>
+            <li>Register</li>
+        </ul>
+    </div>
+</div>
+<!--//w3_short-->
+<!-- /inner_content -->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle three">Register Now </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="signin-form">
+                <div class="login-form-rec">
+                    <form method="post">
+
+                        <input type="text" asp-for="UserName" placeholder="UserName">
+                        <span asp-validation-for="UserName" class="identityerrors"></span>
+
+                        <input type="password" asp-for="Password" id="password1" placeholder="Password">
+                        <span asp-validation-for="Password" class="identityerrors"></span>
+
+                        <input type="password" asp-for="ConfirmPassword" id="password2" placeholder="Confirm Password">
+                        <span asp-validation-for="ConfirmPassword" class="identityerrors"></span>
+
+                        <input type="submit" value="Register">
+
+                        <div class="identityerrors" asp-validation-summary="ModelOnly">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

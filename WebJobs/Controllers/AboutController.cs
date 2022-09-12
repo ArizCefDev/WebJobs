@@ -1,10 +1,12 @@
 ﻿using Business.Abstract;
 using DataAccess.Context;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace WebJobs.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         private readonly IAboutService _aboutService;

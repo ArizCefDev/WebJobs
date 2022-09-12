@@ -6,9 +6,12 @@ using Business.Container;
 using DataAccess.Abstract;
 using DataAccess.Context;
 using DataAccess.EF;
+using DataAccess.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebJobs.Models;
 
 namespace WebJobs
 {
@@ -42,7 +46,22 @@ namespace WebJobs
             //Services
             services.ContainerDependencies();
 
+            //Identity
+            services.AddDbContext<AppDBContext>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDBContext>()
+                .AddErrorDescriber<IdentityValidator>()
+                .AddEntityFrameworkStores<AppDBContext>();
+
             services.AddControllersWithViews();
+
+            //Identity
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +80,8 @@ namespace WebJobs
             app.UseStatusCodePagesWithReExecute("/Error/Error1", "?code={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

@@ -2,6 +2,7 @@
 using Business.ValidationRules;
 using DataAccess.Entity;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 
 namespace WebJobs.Controllers
 {
+    [AllowAnonymous]
     public class NewVacancyController : Controller
     {
         private readonly IJobsService _jobsService;

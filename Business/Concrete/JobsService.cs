@@ -19,6 +19,16 @@ namespace Business.Concrete
             _jobsDal = jobsDal;
         }
 
+        public void ChangeStatusFalse(int id)
+        {
+            _jobsDal.ChangeToFalseByJobs(id);
+        }
+
+        public void ChangeStatusTrue(int id)
+        {
+            _jobsDal.ChangeToTrueByJobs(id);
+        }
+
         public void Delete(Job t)
         {
             _jobsDal.Remove(t);

@@ -63,5 +63,17 @@ namespace WebJobs.Areas.Admin.Controllers
             _jobsService.Delete(values);
             return RedirectToAction("Index", "Job");
         }
+
+        public IActionResult ChangeToTrue(int id)
+        {
+            _jobsService.ChangeStatusTrue(id);
+            return RedirectToAction("Index", "Job");
+        }
+
+        public IActionResult ChangeToFalse(int id)
+        {
+            _jobsService.ChangeStatusFalse(id);
+            return RedirectToAction("Index", "Job");
+        }
     }
 }

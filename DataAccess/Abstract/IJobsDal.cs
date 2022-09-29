@@ -10,5 +10,7 @@ namespace DataAccess.Abstract
     public interface IJobsDal : IBaseDal<Job>
     {
         IEnumerable<Job> GetListWithCategory();
+        void ChangeToTrueByJobs(int id);
+        void ChangeToFalseByJobs(int id);
     }
 }

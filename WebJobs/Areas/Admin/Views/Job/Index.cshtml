@@ -36,6 +36,17 @@
                                 <td>@(((DateTime)item.LastDate).ToString("dd-MMM-yyyy"))</td>
                                 <td>@item.Salary</td>
                                 <td>@item.Category.Name</td>
+@*                                @{
+                                    if (item.Status == false)
+                                    {
+                                        <td><a href="/Admin/Job/ChangeToFalse/@item.ID/" class="btn btn-warning">Passive</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td><a href="/Admin/Job/ChangeToTrue/@item.ID/" class="btn btn-warning">Active</a></td>
+                                    }
+                                }
+*@
                                 <td><a href="/Admin/Job/JobUpdate/@item.ID/" class="btn btn-success">Update</a></td>
                                 <td><a href="/Admin/Job/JobDelete/@item.ID/" style="background:#EB3E28;" class="btn btn-success">Delete</a></td>
                             </tr>
